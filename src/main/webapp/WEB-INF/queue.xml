@@ -2,7 +2,7 @@
 <queue-entries> 
   <queue> 
     <name>keepAliveQueue</name> 
-    <rate>7/m</rate>
+    <rate>6/m</rate>
     <bucket-size>1</bucket-size>
   </queue> 
 </queue-entries>
