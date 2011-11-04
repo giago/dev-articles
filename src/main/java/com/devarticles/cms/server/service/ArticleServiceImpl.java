@@ -38,7 +38,6 @@ import com.devarticles.cms.shared.Correction;
 import com.devarticles.cms.shared.Invite;
 import com.devarticles.cms.shared.Profile;
 import com.devarticles.cms.shared.ServerException;
-import com.devarticles.cms.shared.Correction.Type;
 import com.google.appengine.api.users.User;
 import com.google.appengine.api.users.UserService;
 import com.google.appengine.api.users.UserServiceFactory;

@@ -33,7 +33,6 @@ public class JdoArticleDao extends BaseDaoImpl<Article> implements ArticleDao {
     private static final String CREATED_DATE_DESC = "createdDate desc";
     private static final String DASH = "-";
     private static final int PAGE_SIZE = 10;
-    private static final int LARGE_PAGE_SIZE = 25;
 
     public JdoArticleDao() {
         super(Article.class);
