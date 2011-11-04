@@ -10,9 +10,10 @@
     <include path="/styles/**.css" />
     <include path="/js/**.js" />
     <include path="/images/**.png" />
+    <include path="/error.html" />
   </static-files>
   <static-error-handlers>
-    <handler file="error.html" />
-    <handler file="error.html" error-code="over_quota" />
+    <handler file="/error.html" />
+    <handler file="/error.html" error-code="over_quota" />
   </static-error-handlers>
 </appengine-web-app>
