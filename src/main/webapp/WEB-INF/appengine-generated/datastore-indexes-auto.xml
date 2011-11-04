@@ -1,0 +1,15 @@
+<!-- Indices written at Mon, 25 Oct 2010 14:33:56 UTC -->
+
+<datastore-indexes>
+
+    <!-- Used 15 times in query history -->
+    <datastore-index kind="Link" ancestor="true" source="auto">
+        <property name="links_INTEGER_IDX" direction="asc"/>
+    </datastore-index>
+
+    <!-- Used 39 times in query history -->
+    <datastore-index kind="Content" ancestor="true" source="auto">
+        <property name="contents_INTEGER_IDX" direction="asc"/>
+    </datastore-index>
+
+</datastore-indexes>

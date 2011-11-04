@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib>
+	<tlibversion>1.0</tlibversion>
+	<shortname>cl</shortname>
+	<jsp-version>1.2</jsp-version>
+	<info>Tag library to trasform content</info>
+	<tag>
+		<name>trasform</name>
+		<tagclass>com.devarticles.cms.server.tag.ContentLanguage</tagclass>
+   		<bodycontent>JSP</bodycontent>
+   		<attribute>
+        	<name>type</name>
+        	<required>false</required>
+        	<rtexprvalue>true</rtexprvalue>
+      	</attribute>
+	</tag>
+</taglib>

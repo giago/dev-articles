@@ -1,0 +1,7 @@
+h1. dev-articles
+
+Dev-articles is just a cms for appengine, it is done with gwt and jsp
+nothing special, I may go through a big refactoring soon
+
+"have a look dev-articles":http://www.dev-articles.com/
+

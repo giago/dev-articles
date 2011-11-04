@@ -1,0 +1,53 @@
+<style type="text/css">
+.da-mainArea { width:100%;}
+
+.da-plugin {border:1px solid #cccccc; width:250px; margin-top: 10px;}
+.da-pluginTitle {background-color: #009ECC; color: white; font-weight: bold; padding: 5px; margin-bottom:10px;}
+.da-plugin button { width: 100%;}
+
+.da-articleEditorToolbar { }
+.da-articleEditorToolbarButton { position:relative; margin-left:25px; right:3px; }
+
+.da-limitedTextAreaContainer { }
+.da-limitedTextArea { width:92%; height:200px; border: 1px solid #cccccc; }
+.da-limitedTextAreaCounter { font-weight:bold; color:#C60; float:right; }
+.da-InputContainer { font-weight:bold; color:#cccccc; width:100%; }
+.da-InputButton { color:#ccccc; text-color:#00000; border:1px solid #cccccc;cursor:pointer;float:left; }
+
+.da-linkInputTitleAndDescription {width:100%;}
+
+.da-listInputToolbar { width:100%; height:27px; margin-top:2px }
+.da-listInputAddButton { float:right; }
+.da-listInputContainer { width:100%; border:#cccccc solid 1px; background-color:#EDEDED; margin-top:10px; }
+.da-listInputButton { font-weight:bold; }
+
+.da-listInputContainerTitle { background-color: #009ECC; color: white; font-weight: bold; font-size: 10px; padding-left: 5px;}
+
+.da-horizontalInputContainer { width:100%; }
+.da-longInputField input{ width:99%; margin-bottom:10px;}
+.da-twoThirdInputField input { width:90%; margin-bottom:10px;} 
+.da-oneThirdInputField input { width:50%; margin-bottom:10px;}
+
+.da-messagePanel { width:100%; margin-top:10px; border:red solid; background-color:#EDEDED; }
+.da-messageLabel { color:red; font-weight:strong; font:small Georgia Serif; }
+
+.da-inputWrapper { width:100%; border-bottom:#CCC solid 1px; }
+.da-inputWrapperToolbar { float:right; }
+
+.da-previewLabel { background-color:#ffffff; color:black; }
+
+.da-articleEditor { position:relative; width:58%;  float:left; margin-left:10px;}
+
+.correction {position:absolute; background-color:#FC575E; left:100%; width:150px;
+	float:right; color:white; margin:5px; padding:2px; font-size:10px;} 
+
+.correctorPlugin { width:95%; margin:2%;}
+.correctorPluginSource { border:2px solid #ccc; min-height:100px; }
+.correctorPluginCorrection { }
+.correctorToolBar { width:100%; margin-bottom:5px;margin-top:5px;}
+.correctorToolBar td { text-align:center; }
+.correctorToolBar button {  width: 250px; }
+.correctorToolBarStatus { width: 100px; text-align: center; font-weight: bold; }
+
+.right { position: absolute; right: 5px; }
+</style>

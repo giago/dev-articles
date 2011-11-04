@@ -1,0 +1,8 @@
+<datastore-indexes autoGenerate="true">
+	<datastore-index kind="Tag" ancestor="false" source="manual" >
+		<property name="__key__" direction="desc" />
+	</datastore-index>
+	<datastore-index kind="Profile" ancestor="false" source="manual" >
+		<property name="__key__" direction="desc" />
+	</datastore-index>
+</datastore-indexes>

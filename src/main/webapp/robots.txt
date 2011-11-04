@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+sitemap: http://www.dev-articles.com/sitemap.jsp

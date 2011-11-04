@@ -1,0 +1,41 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+	<url>
+		<loc>http://<%=request.getServerName()%>/</loc>
+		<changefreq>always</changefreq>
+		<priority>1.00</priority>
+	</url>
+	<url>
+		<loc>http://<%=request.getServerName()%>/index.jsp</loc>
+		<changefreq>always</changefreq>
+		<priority>0.80</priority>
+	</url>
+	<url>
+		<loc>http://<%=request.getServerName()%>/about.jsp</loc>
+		<changefreq>monthly</changefreq>
+	</url>
+	<url>
+		<loc>http://<%=request.getServerName()%>/terms.jsp</loc>
+		<changefreq>monthly</changefreq></url>
+	<url>
+		<loc>http://<%=request.getServerName()%>/help.jsp</loc>
+		<changefreq>monthly</changefreq>
+	</url>
+	<url>
+		<loc>http://<%=request.getServerName()%>/privacy.jsp</loc>
+		<changefreq>monthly</changefreq>
+	</url>
+	<url>
+		<loc>http://<%=request.getServerName()%>/archive</loc>
+		<changefreq>monthly</changefreq>
+	</url>
+	<url>
+		<loc>http://<%=request.getServerName()%>/archive/2010</loc>
+		<changefreq>monthly</changefreq>
+	</url>
+	<url>
+		<loc>http://<%=request.getServerName()%>/archive/2011</loc>
+		<changefreq>monthly</changefreq>
+	</url>
+</urlset>

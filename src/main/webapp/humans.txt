@@ -1,0 +1,12 @@
+Your title: Luigi Agosti 
+Site: http://www.luigiagosti.com
+Twitter: luigiagosti
+Location: London, United Kingdom.
+
+/* THANKS */
+Name : Giago Software http://www.gi-ago.com
+
+/* SITE */
+Last update: 2011/05/05
+Components: App Engine
+Software: Eclipse, Java, App Engine

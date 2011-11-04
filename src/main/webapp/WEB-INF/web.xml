@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" version="2.5"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/webapp_2_5.xsd">
+
+	<!-- ========================= Security constraints =========================== -->
+	<security-constraint>
+		<web-resource-collection>
+			<url-pattern>/editor.jsp</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>*</role-name>
+		</auth-constraint>
+	</security-constraint>
+	<security-constraint>
+		<web-resource-collection>
+			<url-pattern>/mapreduce/*</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>admin</role-name>
+		</auth-constraint>
+	</security-constraint>
+
+	<!-- ========================= Hot handler =========================== -->
+   <security-constraint>
+      <web-resource-collection>
+         <url-pattern>/task/*</url-pattern>
+      </web-resource-collection>
+      <auth-constraint>
+         <role-name>admin</role-name>
+      </auth-constraint>
+   </security-constraint>
+   <security-constraint>
+      <web-resource-collection>
+         <url-pattern>/queue/*</url-pattern>
+      </web-resource-collection>
+      <auth-constraint>
+         <role-name>admin</role-name>
+      </auth-constraint>
+   </security-constraint>
+   
+   <servlet>
+      <servlet-name>keepAliveTask</servlet-name>
+      <servlet-class>com.giago.appengine.commons.task.KeepAliveTask
+      </servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>keepAliveTask</servlet-name>
+      <url-pattern>/task/keepAliveTask</url-pattern>
+   </servlet-mapping>
+   
+   <servlet>
+      <servlet-name>keepAliveQueue</servlet-name>
+      <servlet-class>com.giago.appengine.commons.queue.KeepAliveQueue
+      </servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>keepAliveQueue</servlet-name>
+      <url-pattern>/queue/keepAliveQueue</url-pattern>
+   </servlet-mapping>
+
+	<!-- ========================= Article Servlet =========================== -->
+	<servlet>
+		<servlet-name>articleServlet</servlet-name>
+		<servlet-class>com.devarticles.cms.server.servlet.ArticleServlet
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>articleServlet</servlet-name>
+		<url-pattern>/article/*</url-pattern>
+	</servlet-mapping>
+   
+   <!-- ========================= Archive Servlet =========================== -->
+   <servlet>
+      <servlet-name>archiveServlet</servlet-name>
+      <servlet-class>com.devarticles.cms.server.servlet.ArchiveServlet
+      </servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>archiveServlet</servlet-name>
+      <url-pattern>/archive/*</url-pattern>
+   </servlet-mapping>
+
+	<!-- ========================= Tag Servlet =========================== -->
+	<servlet>
+		<servlet-name>tagServlet</servlet-name>
+		<servlet-class>com.devarticles.cms.server.servlet.TagServlet
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>tagServlet</servlet-name>
+		<url-pattern>/tag/*</url-pattern>
+	</servlet-mapping>
+
+	<!-- ========================= Gwt service =========================== -->
+	<servlet>
+		<servlet-name>articleRpcService</servlet-name>
+		<servlet-class>com.devarticles.cms.server.service.ArticleServiceImpl
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>articleRpcService</servlet-name>
+		<url-pattern>/articleEditor/articleService</url-pattern>
+	</servlet-mapping>
+
+	<!-- ========================= Feed servlet =========================== -->
+	<servlet>
+		<servlet-name>feedGenerator</servlet-name>
+		<servlet-class>com.giago.appengine.commons.feed.FeedServlet</servlet-class>
+		<init-param>
+			<param-name>feed-title</param-name>
+			<param-value>dev articles feed</param-value>
+		</init-param>
+		<init-param>
+			<param-name>feed-author</param-name>
+			<param-value>dev articles</param-value>
+		</init-param>
+		<init-param>
+			<param-name>feed-description</param-name>
+			<param-value>List of all the articles from the website</param-value>
+		</init-param>
+		<init-param>
+			<param-name>feed-link</param-name>
+			<param-value>/</param-value>
+		</init-param>
+		<init-param>
+			<param-name>feedItem-kind</param-name>
+			<param-value>Article</param-value>
+		</init-param>
+		<init-param>
+			<param-name>feedItem-linkPrefix</param-name>
+			<param-value>/article/</param-value>
+		</init-param>
+		<init-param>
+			<param-name>feedItem-createdDateProperty</param-name>
+			<param-value>modifiedDate</param-value>
+		</init-param>
+		<init-param>
+			<param-name>feedItem-titleProperty</param-name>
+			<param-value>title</param-value>
+		</init-param>
+		<init-param>
+			<param-name>feedItem-authorProperty</param-name>
+			<param-value>author</param-value>
+		</init-param>
+		<init-param>
+			<param-name>feedItem-idProperty</param-name>
+			<param-value>id</param-value>
+		</init-param>
+		<init-param>
+			<param-name>feedItem-descriptionProperty</param-name>
+			<param-value>description</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>feedGenerator</servlet-name>
+		<url-pattern>/atom/devarticles</url-pattern>
+	</servlet-mapping>
+	
+	<!-- ==================================== Invite registration ==================================== -->
+	<servlet>
+		<servlet-name>inviteRegistrationServlet</servlet-name>
+		<servlet-class>com.devarticles.cms.server.servlet.InviteRegistrationServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>inviteRegistrationServlet</servlet-name>
+		<url-pattern>/invite</url-pattern>
+	</servlet-mapping>
+
+	<!-- ========================= Sitemap servlet =========================== -->
+	<servlet>
+		<servlet-name>sitemapBuilder</servlet-name>
+		<servlet-class>com.giago.appengine.commons.sitemap.SitemapServlet</servlet-class>
+		<init-param>
+			<param-name>sitemaps</param-name>
+			<param-value>/sitemap.jsp</param-value>
+		</init-param>
+		<init-param>
+			<param-name>entities</param-name>
+			<param-value>com.devarticles.cms.server.model.Article,com.devarticles.cms.server.model.Tag</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>sitemapBuilder</servlet-name>
+		<url-pattern>/sitemap.xml</url-pattern>
+	</servlet-mapping>
+
+	<!-- ========================= Redirect filter =========================== -->
+	<filter>
+		<filter-name>redirectFilter</filter-name>
+		<filter-class>com.giago.appengine.commons.filter.DomainRedirectFilter</filter-class>
+		<init-param>
+			<param-name>old-domain</param-name>
+			<param-value>dev-articles.appspot.com</param-value>
+		</init-param>
+		<init-param>
+			<param-name>new-domain</param-name>
+			<param-value>www.dev-articles.com</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>redirectFilter</filter-name>
+		<url-pattern>*</url-pattern>
+	</filter-mapping>
+
+	<!-- ========================= Recent filter =========================== -->
+	<filter>
+		<filter-name>recentArticlesFilter</filter-name>
+		<filter-class>com.devarticles.cms.server.filter.RecentArticlesFilter
+		</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>recentArticlesFilter</filter-name>
+		<url-pattern>/</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>recentArticlesFilter</filter-name>
+		<url-pattern>*.jsp</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>recentArticlesFilter</filter-name>
+		<url-pattern>/article/*</url-pattern>
+	</filter-mapping>
+
+	<!-- ========================= Popular filter =========================== -->
+	<filter>
+		<filter-name>popularArticlesFilter</filter-name>
+		<filter-class>com.devarticles.cms.server.filter.PopularArticlesFilter
+		</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>popularArticlesFilter</filter-name>
+		<url-pattern>/</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>popularArticlesFilter</filter-name>
+		<url-pattern>index.jsp</url-pattern>
+	</filter-mapping>
+    <filter-mapping>
+       <filter-name>popularArticlesFilter</filter-name>
+       <url-pattern>m_index.jsp</url-pattern>
+    </filter-mapping>
+   
+    <!-- ========================= Mobile filter =========================== -->
+    <filter>
+       <filter-name>mobileFilter</filter-name>
+       <filter-class>com.devarticles.cms.server.filter.MobileFilter</filter-class>
+    </filter>
+    <filter-mapping>
+       <filter-name>mobileFilter</filter-name>
+       <url-pattern>/index.jsp</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+       <filter-name>mobileFilter</filter-name>
+       <url-pattern>/</url-pattern>
+    </filter-mapping>
+
+	<!-- ========================= Welcome file list =========================== -->
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+
+</web-app>
